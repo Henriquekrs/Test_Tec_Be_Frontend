@@ -36,5 +36,5 @@ $ yarn json-server --watch server.json
 3. Inicie a estrutura do seu projeto (seja em React ou Vanilla JS)
 
 ## Entrega
-Entregue este projeto realizando um Pull Request para este repositório dentro do prazo combinado com o avaliador.
+Criar um repositório no github e enviar pro nosso time.
 Em caso de dúvidas, contate-nos via e-mail.

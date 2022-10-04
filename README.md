@@ -8,8 +8,7 @@ deve ter a possibilidade de realizar uma pesquisa na tabela por um input. Obs:
 ![image](https://user-images.githubusercontent.com/42809136/127918010-79b5d883-df57-4c6d-8a2a-43e220d3c703.png)
 
 ## Condições
-Deve-se utilizar React ou Vanilla JS (JavaScript puro). É permitido utilizar libs externas,
-mas recomenda-se que seja o mínimo possível para que consigamos avaliar melhor o seu teste.
+Deve-se utilizar React ou Vanilla JS (JavaScript puro). O input de pesquisa deve filtrar por Cargo, Nome e Telefone. As datas e telefones devem ser formatadas no front e não na API. É permitido utilizar libs externas, mas recomenda-se que seja o mínimo possível para que consigamos avaliar melhor o seu teste. 
 
 ## Critérios de Avaliação
 Em ordem de relevância:

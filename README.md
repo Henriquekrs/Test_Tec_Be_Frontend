@@ -22,7 +22,7 @@ Tenha instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/).
 
 ## Diferenciais
-TypeScritp, Styled Components
+TypeScript, Styled Components
 
 ## Rodando a aplicação
 Para iniciar o projeto, siga o passo a passo abaixo. Caso não tenha familiaridade com o [json-server](https://github.com/typicode/json-server):

@@ -1,42 +1,66 @@
-# Be Mobile - Desafio Front-end
-O desafio Front-end da Be consiste em montar uma tabela com as informações que virão por uma API simulada escrita em json-server. 
-A tabela deve conter as seguintes colunas: imagem, nome, cargo, data de admissão e telefone,
-com todos os dados devidamente formatados e apresentados como está no figma. Além disso, 
-deve ter a possibilidade de realizar uma pesquisa na tabela por um input. Obs: 
-[acesse aqui o figma do projeto](https://www.figma.com/file/y9qJNNAckFRL7LNoyNjpv8/Teste---Be-mobile).
+# Teste Técnico Front-end Be
 
-![image](https://user-images.githubusercontent.com/42809136/127918010-79b5d883-df57-4c6d-8a2a-43e220d3c703.png)
+Este é um repositório para Testes Técnicos em Front-end da Be. Ele é destinado a pessoas que participam de nossos processos seletivos. 
 
-## Condições
-Deve-se utilizar React ou Vanilla JS (JavaScript puro). O input de pesquisa deve filtrar por Cargo, Nome e Telefone. As datas e telefones devem ser formatadas no front e não na API. É permitido utilizar libs externas, mas recomenda-se que seja o mínimo possível para que consigamos avaliar melhor o seu teste. 
+Se você chegou até aqui por meio de um formulário de Teste Técnico, siga em frente. Caso contrário, acompanhe a Be no [Linkedin](https://br.linkedin.com/company/bemobiletech), [Instagram](https://www.instagram.com/bemobile.tech/), [Facebook](https://www.facebook.com/bemobile.tech) ou na nossa comunidade no [Telegram](https://t.me/be_tech_community). Divulgamos novos processos seletivos por lá.
 
-## Critérios de Avaliação
-Em ordem de relevância:
-1. Lógica de programação
-2. Organização (do código e dos arquivos)
-3. CSS
-4. README, que deve conter pelo menos as seguintes informações: Sobre, Pré-requisitos, Rodando a Aplicação.
+## Desafio
 
-## Pré-requisitos
-Tenha instalado em sua máquina as seguintes ferramentas:
-[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/).
+O Teste Técnico para Front-End da Be consiste em construir a visualização de uma tabela com dados que virão de uma API simulada, em json-server.
 
-## Diferenciais
-TypeScript, Styled Components
+### Mockup
 
-## Rodando a aplicação
-Para iniciar o projeto, siga o passo a passo abaixo. Caso não tenha familiaridade com o [json-server](https://github.com/typicode/json-server):
-1. Baixe este projeto em sua máquina e crie um repositório no Github baseado nele
-2. Entre no projeto e execute os comandos abaixo
-```bash
-# Instalar as dependências
-$ yarn
+Este é o [projeto em Figma](https://www.figma.com/file/yw6th52zE9bubewc6ayTg5/Teste-T%C3%A9cnico-Front-End-Be.?type=design&node-id=1%3A4&mode=dev&t=vVxs9eyKybrYmq4Z-1) para você se orientar. Nele, você encontrará estilos, visualização desktop e mobile e outros padrões que deverá seguir.
 
-# Executar o json-server
-$ yarn json-server --watch server.json
-```
-3. Inicie a estrutura do seu projeto (seja em React ou Vanilla JS)
+### Requisitos Gerais
 
-## Entrega
-Criar um repositório no github e enviar pro nosso time.
-Em caso de dúvidas, contate-nos via e-mail.
+Deve-se utilizar React.js ou Vanilla JS (JavaScript puro) para construir o projeto.
+
+É permitido utilizar libs externas, mas recomenda-se que seja o mínimo possível.
+
+A visualização deve ser responsiva.
+
+A tabela deve conter as seguintes colunas:
+
+- imagem (thumb do/a usuário/a);
+- nome;
+- cargo
+- data de admissão;
+- telefone.
+
+Também deve ser possível realizar pesquisa na tabela por meio de um input. O input de pesquisa deve permitir filtrar dados por cargo, nome e telefone.
+
+Datas e telefones devem ser formatadas no front-end e não na API.
+
+Tenha instaladas em sua máquina as ferramentas [Git](https://git-scm.com/), [Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/) (ou outro gerenciador de pacotes de sua preferência) para poder trabalhar no projeto.
+
+### Acesso aos dados da API simulada
+
+Para ter acesso aos dados que alimentarão o projeto, faça o seguinte:
+
+1. caso você não tenha, instale o pacote [json-server](https://github.com/typicode/json-server);
+2. clone este repositório do GitHub em sua máquina: [https://github.com/BeMobile/desafio-front-end](https://github.com/BeMobile/desafio-front-end);
+3. entre na pasta do projeto, em sua máquina, e, por meio da linha de comando, execute o comando `json-server --watch db.json`, para consumir a API simulada;
+4. inicie a estrutura e o desenvolvimento do projeto.
+
+É necessário deixar o json-server rodando no terminal para que os dados sejam visualizados no projeto.
+
+Caso você tenha problemas com o json-server, tente rodá-lo com `npx json-server db.json` ou 
+com `yarn json-server <path>/db.json`, em que <path> é o caminho completo até o diretório em que o arquivo db.json está localizado. Se mesmo assim não funcionar, busque ajuda na web.
+
+### Critérios de Avaliação
+
+Em ordem de relevância, avaliaremos:
+
+1. lógica de programação;
+2. organização (do código e dos arquivos);
+3. CSS do projeto;
+4. README, que deve conter, pelo menos, as seguintes informações: sobre o projeto, pré-requisitos e instruções para rodar a aplicação.
+
+Serão diferenciais na avaliação o uso de TypeScript e Styled Components.
+
+### Envio da Solução
+
+O projeto deverá ser hospedado em um repositório no seu GitHub. O link do repositório deverá ser fornecido por meio do formulário de Teste Técnico encaminhado ao seu e-mail. Não serão aceitos links de projetos enviados por outros meios.
+
+Demais instruções e regras serão instruídas nos formulários e nas comunicações do processo seletivo do qual você está participando.

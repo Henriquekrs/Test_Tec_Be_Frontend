@@ -57,7 +57,7 @@ Em ordem de relevância, avaliaremos:
 3. CSS do projeto;
 4. README, que deve conter, pelo menos, as seguintes informações: sobre o projeto, pré-requisitos e instruções para rodar a aplicação.
 
-Serão diferenciais na avaliação o uso de TypeScript e Styled Components.
+É um diferencial na avaliação o uso de TypeScript.
 
 ### Envio da Solução
 

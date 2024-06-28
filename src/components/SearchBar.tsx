@@ -4,9 +4,13 @@ import searchIcon from '../assets/Default.svg';
 export function SearchBar() {
   return (
     <div className={styles.container}>
-      <h1>Funcionários</h1>
       <label htmlFor='searchBar'>
-        <input type='text' name='searchBar' placeholder='Pesquisar' />
+        <input
+          type='text'
+          id='searchBar'
+          name='searchBar'
+          placeholder='Pesquisar'
+        />
       </label>
       <button>
         <img src={searchIcon} alt='Search-Icon' />

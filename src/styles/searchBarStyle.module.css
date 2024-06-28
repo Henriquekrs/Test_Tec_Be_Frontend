@@ -1,37 +1,27 @@
 .container {
-  margin-top: 10vh;
-  height: 15vh;
+  width: 300px;
+  height: 40px;
   display: flex;
-  flex-direction: row;
-  width: 100%;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.container h1 {
-  font-size: 30px;
-  font-weight: 600;
-  line-height: 28.13px;
-  left: 10vw;
   position: relative;
+  align-items: center;
 }
 
 .container input {
   height: 40px;
-  width: 290px;
+  width: 99%;
   border: none;
   border-radius: 8px;
   border: 1px solid var(--gray10);
-  padding: 5px;
-  right: 10vw;
-  position: relative;
- 
+  padding: 5px 40px 5px 20px; /* Ajuste o padding para acomodar o botão */
   font-size: 16px;
   font-weight: 400;
   line-height: 18.75px;
-  text-indent: 20px;
-  
-  
+}
+
+.container input:focus {
+  border: 1px solid var(--gray20);
+  outline: none;
+  color: var(--gray20);
 }
 
 .container input::placeholder {
@@ -40,10 +30,11 @@
 
 .container button {
   position: absolute;
-  right: 10vw;
-  width: 34px;
-  height: 34px;
+  right: 10px; /* Posiciona o botão no lado direito interno */
+  width: 20px;
+  height: 20px;
   background: none;
-  border-radius: 8px;
-  padding: 5px;
+  border: none;
+  cursor: pointer;
+  padding: 0; /* Remove o padding padrão */
 }

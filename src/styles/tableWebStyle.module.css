@@ -1,0 +1,89 @@
+.container {
+  width: 100%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container table {
+  border-collapse: collapse;
+  display: block;
+  flex-direction: column;
+  width: 80vw;
+  height: 100%;
+}
+
+.container thead {
+  height: 50px;
+  width: 100%;
+  display: block;
+  background: var(--gradient);
+  box-shadow: 0px 1px 2px 0px #00000033;
+  border-radius: 10px 10px 0 0;
+
+  & tr {
+    display: flex;
+    width: 100%;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 18.75px;
+  };
+
+  & th {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    flex-direction: row;
+    color: var(--white);
+    justify-content: flex-start;
+    text-indent: 50px;
+  }
+}
+
+.container tbody {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    & tr {
+      display: flex;
+      width: 100%;
+      height: 50px;
+      justify-content: space-around;
+      align-items: center;
+      box-shadow: 0px 1px 2px 0px #00000033;
+
+      & td :nth-child(1){
+        left: 50px;
+        position: relative;
+      }
+    }
+
+    & td {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      height: 50px;
+      align-items: center;
+      flex-direction: row;
+      justify-content: flex-start;
+      text-indent: 50px;
+
+      & img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+      }
+    }
+}
+
+

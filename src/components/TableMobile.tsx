@@ -1,18 +1,17 @@
 import { useGlobalContext } from '../context/GlobalProvider';
-import styles from '../styles/tableStyle.module.css';
+import { formatDate } from '../utils/formatDate';
+import { formatPhoneNumber } from '../utils/formatNumber';
+import up from '../assets/up.svg';
 
-export function Table() {
+export function TableMobile() {
   const { employees } = useGlobalContext();
   return (
-    <div className={styles.container}>
+    <div>
       <table>
         <thead>
           <tr>
             <th>Foto</th>
             <th>Nome</th>
-            <th>Cargo</th>
-            <th>Data de Admissão</th>
-            <th>Telefone</th>
           </tr>
         </thead>
         <tbody>
@@ -22,9 +21,12 @@ export function Table() {
                 <img src={employee.image} alt={employee.name} height={20} />
               </td>
               <td>{employee.name}</td>
-              <td>{employee.job}</td>
-              <td>{employee.admission_date}</td>
-              <td>{employee.phone}</td>
+              <img src={up} alt='Mais informações' height={20} />
+              <div>
+                <td>{employee.job}</td>
+                <td>{formatDate(employee.admission_date)}</td>
+                <td>{formatPhoneNumber(employee.phone)}</td>
+              </div>
             </tr>
           ))}
         </tbody>

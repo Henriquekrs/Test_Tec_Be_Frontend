@@ -1,0 +1,19 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --black: #1c1c1c;
+  --gray20: #9e9e9e;
+  --gray10: #dfdfdf;
+  --gray00: #f0f0f0;
+  --white: #ffffff;
+  --gradient: linear-gradient(0, #594ED2 0,#5A84C0 100%);
+}
+  
+  
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: var(--white);
+}

@@ -1,0 +1,37 @@
+.container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.container table {
+  border-collapse: collapse;
+  display: block;
+  flex-direction: column;
+  width: 80vw;
+}
+
+.container thead {
+  height: 50px;
+  width: 100%;
+  display: block;
+  background: var(--gradient);
+  box-shadow: 0px 1px 2px 0px #00000033;
+  border-radius: 10px 10px 0 0;
+}
+
+.container tbody {
+    display: block;
+    width: 100%;
+}
+
+.container tr {
+  display: flex;
+  width: 100%;
+}
+
+
+
+

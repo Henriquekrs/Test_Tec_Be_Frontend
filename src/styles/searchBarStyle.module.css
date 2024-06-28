@@ -1,0 +1,49 @@
+.container {
+  margin-top: 10vh;
+  height: 15vh;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.container h1 {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 28.13px;
+  left: 10vw;
+  position: relative;
+}
+
+.container input {
+  height: 40px;
+  width: 290px;
+  border: none;
+  border-radius: 8px;
+  border: 1px solid var(--gray10);
+  padding: 5px;
+  right: 10vw;
+  position: relative;
+ 
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 18.75px;
+  text-indent: 20px;
+  
+  
+}
+
+.container input::placeholder {
+  color: var(--gray20);
+}
+
+.container button {
+  position: absolute;
+  right: 10vw;
+  width: 34px;
+  height: 34px;
+  background: none;
+  border-radius: 8px;
+  padding: 5px;
+}

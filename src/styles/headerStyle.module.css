@@ -8,6 +8,10 @@
   z-index: 1000;
   display: flex;
   box-shadow: 0px 2px 8px 0px #00000033;
+
+  @media screen and (max-width: 768px){
+    width: 100vw;
+  }
 }
 
 .container img {

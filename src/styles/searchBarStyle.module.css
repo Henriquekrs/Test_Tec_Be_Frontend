@@ -38,3 +38,20 @@
   cursor: pointer;
   padding: 0; /* Remove o padding padrão */
 }
+
+@media screen and (max-width: 768px){
+  .container label {
+    right: -50%;
+    position: relative;
+    transform: translateX(-50%);
+  }
+
+  .container input {
+    margin-left: 22px;
+  }
+
+  .container button {
+    right: 0;
+    transform: translateX(100%);
+  }
+}

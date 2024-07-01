@@ -1,12 +1,15 @@
 import { useEffect } from 'react';
 import { Header } from '../components/Header';
-import { SearchBar } from '../components/SearchBar';
-import { Table } from '../components/Table';
+import { TableMobile } from '../components/TableMobile';
 import { useGlobalContext } from '../context/GlobalProvider';
+import { useWindowSize } from '../hooks/useWindowSize'; // Import the custom hook
 import styles from '../styles/homePageStyle.module.css';
+import { TitlePage } from '../components/TitlePage';
+import { TableDesktop } from '../components/TableDesktop';
 
 export function HomePage() {
   const { getEmployees } = useGlobalContext();
+  const { width } = useWindowSize();
 
   useEffect(() => {
     getEmployees();
@@ -15,8 +18,8 @@ export function HomePage() {
   return (
     <div className={styles.container}>
       <Header />
-      <SearchBar />
-      <Table />
+      <TitlePage />
+      {width < 768 ? <TableMobile /> : <TableDesktop />}
     </div>
   );
 }

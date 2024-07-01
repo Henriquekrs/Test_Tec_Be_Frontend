@@ -1,5 +1,6 @@
 import { useGlobalContext } from '../context/GlobalProvider';
 import styles from '../styles/tableDesktopStyle.module.css';
+import { Employee } from '../types/contextTypes';
 import { formatDate } from '../utils/formatDate';
 import { formatPhoneNumber } from '../utils/formatNumber';
 
@@ -18,7 +19,7 @@ export function TableDesktop() {
           </tr>
         </thead>
         <tbody>
-          {filteredEmployees.map((employee) => (
+          {filteredEmployees.map((employee: Employee) => (
             <tr key={employee.id}>
               <td>
                 <img src={employee.image} alt={employee.name} height={20} />

@@ -2,26 +2,7 @@ import { useContext, useState } from 'react';
 import GlobalContext from './GlobalState';
 import { fetchEmployees } from '../FetchApi/Employees';
 import { filterEmployees } from '../utils/filterEmployees';
-
-export type Employee = {
-  id: number;
-  name: string;
-  job: string;
-  admission_date: string;
-  phone: string;
-  image: string;
-};
-
-export type GlobalContextType = {
-  employees: Employee[];
-  filteredEmployees: Employee[];
-  getEmployees: () => Promise<void>;
-  searchEmployees: (query: string) => void;
-};
-
-export type ProviderPropsType = {
-  children: React.ReactNode;
-};
+import { Employee, ProviderPropsType } from '../types/contextTypes';
 
 const GlobalProvider = ({ children }: ProviderPropsType) => {
   const [employees, setEmployees] = useState<Employee[]>([]);
@@ -30,7 +11,7 @@ const GlobalProvider = ({ children }: ProviderPropsType) => {
   const getEmployees = async () => {
     const data = await fetchEmployees();
     setEmployees(data);
-    setFilteredEmployees(data); // Initially, show all employees
+    setFilteredEmployees(data);
   };
 
   const searchEmployees = (query: string) => {

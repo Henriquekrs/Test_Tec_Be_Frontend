@@ -15,7 +15,7 @@ export function useWindowSize() {
     }
 
     window.addEventListener('resize', handleResize);
-    handleResize(); // Call the function to set the initial size
+    handleResize();
 
     return () => window.removeEventListener('resize', handleResize);
   }, []);

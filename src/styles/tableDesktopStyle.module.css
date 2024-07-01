@@ -49,41 +49,41 @@
 }
 
 .container tbody {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+
+  & tr {
     display: flex;
-    flex-direction: column;
     width: 100%;
-    height: 100%;
+    height: 50px;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0px 1px 2px 0px #00000033;
 
-    & tr {
-      display: flex;
-      width: 100%;
-      height: 50px;
-      justify-content: space-around;
-      align-items: center;
-      box-shadow: 0px 1px 2px 0px #00000033;
-
-      & td :nth-child(1){
-        left: 50px;
-        position: relative;
-      }
+    & td :nth-child(1){
+      left: 50px;
+      position: relative;
     }
+  }
 
-    & td {
-      display: flex;
-      flex-direction: row;
-      width: 100%;
-      height: 50px;
-      align-items: center;
-      flex-direction: row;
-      justify-content: flex-start;
-      text-indent: 50px;
-
-      & img {
-        width: 40px;
-        height: 40px;
-        border-radius: 50%;
-      }
+  & td {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 50px;
+    align-items: center;
+    flex-direction: row;
+    justify-content: flex-start;
+    text-indent: 50px;
+    
+    & img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
     }
+  }
 }
 
 

@@ -5,6 +5,7 @@ import { formatPhoneNumber } from '../utils/formatNumber';
 import up from '../assets/up.svg';
 import down from '../assets/down.svg';
 import styles from '../styles/tableMobile.module.css';
+import { Employee } from '../types/contextTypes';
 
 export function TableMobile() {
   const { filteredEmployees } = useGlobalContext();
@@ -32,7 +33,7 @@ export function TableMobile() {
           </tr>
         </thead>
         <tbody>
-          {filteredEmployees.map((employee) => (
+          {filteredEmployees.map((employee: Employee) => (
             <React.Fragment key={employee.id}>
               <tr>
                 <td>

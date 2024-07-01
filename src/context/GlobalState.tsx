@@ -1,5 +1,5 @@
 import { createContext } from 'react';
-import { GlobalContextType } from './GlobalProvider';
+import { GlobalContextType } from '../types/contextTypes';
 
 const GlobalContext = createContext({} as GlobalContextType);
 

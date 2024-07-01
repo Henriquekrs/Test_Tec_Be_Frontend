@@ -1,3 +1,5 @@
+import { Employee } from '../types/contextTypes';
+
 export function filterEmployees(employees: Employee[], search: string) {
   return employees.filter(
     (employee) =>

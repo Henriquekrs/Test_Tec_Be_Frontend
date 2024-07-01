@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import GlobalContext from './GlobalState';
 import { fetchEmployees } from '../FetchApi/Employees';
+import { filterEmployees } from '../utils/filterEmployees';
 
 export type Employee = {
   id: number;
@@ -13,7 +14,9 @@ export type Employee = {
 
 export type GlobalContextType = {
   employees: Employee[];
+  filteredEmployees: Employee[];
   getEmployees: () => Promise<void>;
+  searchEmployees: (query: string) => void;
 };
 
 export type ProviderPropsType = {
@@ -22,15 +25,27 @@ export type ProviderPropsType = {
 
 const GlobalProvider = ({ children }: ProviderPropsType) => {
   const [employees, setEmployees] = useState<Employee[]>([]);
-  console.log(employees, 'Provider');
+  const [filteredEmployees, setFilteredEmployees] = useState<Employee[]>([]);
 
   const getEmployees = async () => {
     const data = await fetchEmployees();
     setEmployees(data);
+    setFilteredEmployees(data); // Initially, show all employees
+  };
+
+  const searchEmployees = (query: string) => {
+    if (!query) {
+      setFilteredEmployees(employees);
+    } else {
+      const filtered = filterEmployees(employees, query);
+      setFilteredEmployees(filtered);
+    }
   };
 
   return (
-    <GlobalContext.Provider value={{ employees, getEmployees }}>
+    <GlobalContext.Provider
+      value={{ employees, filteredEmployees, getEmployees, searchEmployees }}
+    >
       {children}
     </GlobalContext.Provider>
   );

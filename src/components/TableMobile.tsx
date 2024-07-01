@@ -1,33 +1,75 @@
+import React, { useState } from 'react';
 import { useGlobalContext } from '../context/GlobalProvider';
 import { formatDate } from '../utils/formatDate';
 import { formatPhoneNumber } from '../utils/formatNumber';
 import up from '../assets/up.svg';
+import down from '../assets/down.svg';
+import styles from '../styles/tableMobile.module.css';
 
 export function TableMobile() {
-  const { employees } = useGlobalContext();
+  const { filteredEmployees } = useGlobalContext();
+  const [expandedRows, setExpandedRows] = useState<{ [key: string]: boolean }>(
+    {}
+  );
+
+  const handleToggle = (id: number) => {
+    setExpandedRows((prev) => ({
+      ...prev,
+      [id]: !prev[id],
+    }));
+  };
+
   return (
-    <div>
+    <div className={styles.container}>
       <table>
         <thead>
           <tr>
             <th>Foto</th>
             <th>Nome</th>
+            <th>
+              <div></div>
+            </th>
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
-            <tr key={employee.id}>
-              <td>
-                <img src={employee.image} alt={employee.name} height={20} />
-              </td>
-              <td>{employee.name}</td>
-              <img src={up} alt='Mais informações' height={20} />
-              <div>
-                <td>{employee.job}</td>
-                <td>{formatDate(employee.admission_date)}</td>
-                <td>{formatPhoneNumber(employee.phone)}</td>
-              </div>
-            </tr>
+          {filteredEmployees.map((employee) => (
+            <React.Fragment key={employee.id}>
+              <tr>
+                <td>
+                  <img src={employee.image} alt={employee.name} height={20} />
+                </td>
+                <td>{employee.name}</td>
+                <td>
+                  <img
+                    src={expandedRows[employee.id] ? up : down}
+                    alt='Mais informações'
+                    height={16}
+                    className={styles.toggleIcon}
+                    onClick={() => handleToggle(employee.id)}
+                  />
+                </td>
+              </tr>
+              {expandedRows[employee.id] && (
+                <tr>
+                  <td colSpan={3}>
+                    <div className={styles.additionalInfo}>
+                      <div>
+                        <p>Cargo</p>
+                        {employee.job}
+                      </div>
+                      <div>
+                        <p>Data de admissão</p>
+                        {formatDate(employee.admission_date)}
+                      </div>
+                      <div>
+                        <p>Telefone</p>
+                        {formatPhoneNumber(employee.phone)}
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              )}
+            </React.Fragment>
           ))}
         </tbody>
       </table>

@@ -1,10 +1,10 @@
 import { useGlobalContext } from '../context/GlobalProvider';
-import styles from '../styles/tableWebStyle.module.css';
+import styles from '../styles/tableDesktopStyle.module.css';
 import { formatDate } from '../utils/formatDate';
 import { formatPhoneNumber } from '../utils/formatNumber';
 
 export function TableDesktop() {
-  const { employees } = useGlobalContext();
+  const { filteredEmployees } = useGlobalContext();
   return (
     <div className={styles.container}>
       <table>
@@ -18,7 +18,7 @@ export function TableDesktop() {
           </tr>
         </thead>
         <tbody>
-          {employees.map((employee) => (
+          {filteredEmployees.map((employee) => (
             <tr key={employee.id}>
               <td>
                 <img src={employee.image} alt={employee.name} height={20} />

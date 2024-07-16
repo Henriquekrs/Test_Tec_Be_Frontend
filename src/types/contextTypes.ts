@@ -9,9 +9,8 @@ export type Employee = {
 
 export type GlobalContextType = {
   employees: Employee[];
-  filteredEmployees: Employee[];
   getEmployees: () => Promise<void>;
-  searchEmployees: (query: string) => void;
+  filterEmployees: (query: string) => void;
 };
 
 export type ProviderPropsType = {

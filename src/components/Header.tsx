@@ -1,10 +1,10 @@
-import LogoBe from '../assets/Fundo.svg';
 import styles from '../styles/headerStyle.module.css';
+import { LogoBe } from '../assets/LogoBe';
 
 export function Header() {
   return (
     <header className={styles.container}>
-      <img src={LogoBe} alt='Logotipo Be' />
+      <LogoBe />
     </header>
   );
 }

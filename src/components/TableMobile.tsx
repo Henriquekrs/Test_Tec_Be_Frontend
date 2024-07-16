@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { useGlobalContext } from '../context/GlobalProvider';
 import { formatDate } from '../utils/formatDate';
 import { formatPhoneNumber } from '../utils/formatNumber';
-import up from '../assets/up.svg';
-import down from '../assets/down.svg';
 import styles from '../styles/tableMobile.module.css';
 import { Employee } from '../types/contextTypes';
+import { ArrowUp } from '../assets/up';
+import { ArrowDown } from '../assets/down';
 
 export function TableMobile() {
-  const { filteredEmployees } = useGlobalContext();
+  const { employees } = useGlobalContext();
   const [expandedRows, setExpandedRows] = useState<{ [key: string]: boolean }>(
     {}
   );
@@ -33,7 +33,7 @@ export function TableMobile() {
           </tr>
         </thead>
         <tbody>
-          {filteredEmployees.map((employee: Employee) => (
+          {employees.map((employee: Employee) => (
             <React.Fragment key={employee.id}>
               <tr>
                 <td>
@@ -41,13 +41,12 @@ export function TableMobile() {
                 </td>
                 <td>{employee.name}</td>
                 <td>
-                  <img
-                    src={expandedRows[employee.id] ? up : down}
-                    alt='Mais informações'
-                    height={16}
+                  <div
                     className={styles.toggleIcon}
                     onClick={() => handleToggle(employee.id)}
-                  />
+                  >
+                    {expandedRows[employee.id] ? <ArrowUp /> : <ArrowDown />}
+                  </div>
                 </td>
               </tr>
               {expandedRows[employee.id] && (

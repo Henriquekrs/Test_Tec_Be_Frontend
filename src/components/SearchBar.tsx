@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import { useGlobalContext } from '../context/GlobalProvider';
 import styles from '../styles/searchBarStyle.module.css';
-import searchIcon from '../assets/Default.svg';
+import { SearchIcon } from '../assets/SearchIcon';
 
 export function SearchBar() {
-  const { searchEmployees } = useGlobalContext();
+  const { filterEmployees } = useGlobalContext();
   const [query, setQuery] = useState('');
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const newQuery = e.target.value;
     setQuery(newQuery);
-    searchEmployees(newQuery);
+    filterEmployees(newQuery);
   };
 
   return (
@@ -26,7 +26,7 @@ export function SearchBar() {
         />
       </label>
       <button>
-        <img src={searchIcon} alt='Search-Icon' />
+        <SearchIcon />
       </button>
     </div>
   );

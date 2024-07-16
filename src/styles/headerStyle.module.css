@@ -14,9 +14,10 @@
   }
 }
 
-.container img {
+.container svg {
   position: absolute;
   width: 60px;
+  height: 60px;
   left: 10vw;
   top: 50%;
   transform: translateY(-50%);

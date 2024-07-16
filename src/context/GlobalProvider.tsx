@@ -1,31 +1,25 @@
 import { useContext, useState } from 'react';
 import GlobalContext from './GlobalState';
 import { fetchEmployees } from '../FetchApi/Employees';
-import { filterEmployees } from '../utils/filterEmployees';
 import { Employee, ProviderPropsType } from '../types/contextTypes';
+import { FilterEmployees } from '../FetchApi/FilterEmployees';
 
 const GlobalProvider = ({ children }: ProviderPropsType) => {
   const [employees, setEmployees] = useState<Employee[]>([]);
-  const [filteredEmployees, setFilteredEmployees] = useState<Employee[]>([]);
 
   const getEmployees = async () => {
     const data = await fetchEmployees();
     setEmployees(data);
-    setFilteredEmployees(data);
   };
 
-  const searchEmployees = (query: string) => {
-    if (!query) {
-      setFilteredEmployees(employees);
-    } else {
-      const filtered = filterEmployees(employees, query);
-      setFilteredEmployees(filtered);
-    }
+  const filterEmployees = async (params: string) => {
+    const filter = await FilterEmployees(params);
+    setEmployees(filter);
   };
 
   return (
     <GlobalContext.Provider
-      value={{ employees, filteredEmployees, getEmployees, searchEmployees }}
+      value={{ employees, getEmployees, filterEmployees }}
     >
       {children}
     </GlobalContext.Provider>

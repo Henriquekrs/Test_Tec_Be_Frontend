@@ -5,7 +5,7 @@ import { formatDate } from '../utils/formatDate';
 import { formatPhoneNumber } from '../utils/formatNumber';
 
 export function TableDesktop() {
-  const { filteredEmployees } = useGlobalContext();
+  const { employees } = useGlobalContext();
   return (
     <div className={styles.container}>
       <table>
@@ -19,7 +19,7 @@ export function TableDesktop() {
           </tr>
         </thead>
         <tbody>
-          {filteredEmployees.map((employee: Employee) => (
+          {employees.map((employee: Employee) => (
             <tr key={employee.id}>
               <td>
                 <img src={employee.image} alt={employee.name} height={20} />
